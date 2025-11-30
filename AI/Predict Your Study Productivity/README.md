@@ -137,9 +137,9 @@ flowchart LR
     A -->|Datos Crudos| B
     D -->|Carga| E
     
-    style Ingesta fill:#f9f9f9,stroke:#333,stroke-width:2px
-    style Procesamiento fill:#e1f5fe,stroke:#0277bd,stroke-width:2px
-    style Aplicacion fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
+    style Ingesta fill:#d9d9d9,stroke:#333,stroke-width:2px,color:#000
+    style Procesamiento fill:#bbdefb,stroke:#0277bd,stroke-width:2px,color:#000
+    style Aplicacion fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px,color:#000
 ```
 
 ### Representación Visual (FossFLOW)
