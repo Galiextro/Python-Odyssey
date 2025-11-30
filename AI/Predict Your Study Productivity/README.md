@@ -31,6 +31,7 @@ El sistema predice:
 ```text
 └── Resources                   # Recursos del proyecto
     └── Diagram.json            # Diagrama del proyecto
+    └── image.png               # Imagen del proyecto
 ├── productividad_estudio.csv   # Dataset con registros diarios
 ├── notebook.ipynb              # Notebook para limpieza, EDA y entrenamiento
 ├── modelo_regresion.pkl        # Modelo entrenado para predicción numérica
