@@ -106,7 +106,7 @@ Se han seleccionado algoritmos de **Random Forest** debido a su robustez con dat
 El flujo de datos del proyecto se estructura de la siguiente manera:
 
 ```mermaid
-graph TD
+flowchart LR
     A["Google Form / CSV"] -->|"Datos Crudos"| B("Notebook de Entrenamiento")
     B -->|"Limpieza y EDA"| B
     B -->|"Entrenamiento"| C{"Modelos ML"}
@@ -115,6 +115,13 @@ graph TD
     F["Usuario"] -->|"Inputs Manuales"| E
     E -->|"Predicción"| G["Dashboard Personal"]
 ```
+
+
+![alt text](Resources/image.png)
+
+Este diagrama ha sido creado gracias a la herramienta **FossFLOW**, desarrollada por el equipo de [Stan Smith](https://github.com/stan-smith). Si te interesa crear diagramas isométricos de infraestructura de manera sencilla, te animo a probarla y apoyar el proyecto en su repositorio oficial: [FossFLOW en GitHub](https://github.com/stan-smith/FossFLOW).
+
+Si quieres ver el diagrama original y editarlo, puedes encontrar el archivo fuente en `Resources/Diagram.json`.
 
 ## Contribución
 
