@@ -103,25 +103,54 @@ Se han seleccionado algoritmos de **Random Forest** debido a su robustez con dat
 
 ## Arquitectura
 
-El flujo de datos del proyecto se estructura de la siguiente manera:
+El proyecto se compone de dos visualizaciones principales para entender su funcionamiento: el flujo lógico de datos y una representación visual de la infraestructura.
+
+### Flujo Lógico de Datos
+
+Este diagrama detalla el proceso técnico desde la recolección de datos hasta la visualización final:
 
 ```mermaid
 flowchart LR
-    A["Google Form / CSV"] -->|"Datos Crudos"| B("Notebook de Entrenamiento")
-    B -->|"Limpieza y EDA"| B
-    B -->|"Entrenamiento"| C{"Modelos ML"}
-    C -->|"Exportación"| D["Archivos .pkl"]
-    D -->|"Carga"| E["Streamlit App"]
-    F["Usuario"] -->|"Inputs Manuales"| E
-    E -->|"Predicción"| G["Dashboard Personal"]
+    subgraph Ingesta [Ingesta de Datos]
+        A[Google Form / CSV]
+    end
+    
+    subgraph Procesamiento [Procesamiento y Modelado]
+        B[Notebook de Entrenamiento]
+        C[Modelos ML]
+        D[Archivos .pkl]
+        
+        B -->|Limpieza y EDA| B
+        B -->|Entrenamiento| C
+        C -->|Exportación| D
+    end
+    
+    subgraph Aplicacion [Aplicación de Usuario]
+        E[Streamlit App]
+        F[Usuario]
+        G[Dashboard Personal]
+        
+        F -->|Inputs Manuales| E
+        E -->|Predicción| G
+    end
+
+    A -->|Datos Crudos| B
+    D -->|Carga| E
+    
+    style Ingesta fill:#f9f9f9,stroke:#333,stroke-width:2px
+    style Procesamiento fill:#e1f5fe,stroke:#0277bd,stroke-width:2px
+    style Aplicacion fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px
 ```
 
+### Representación Visual (FossFLOW)
 
-![alt text](Resources/image.png)
+Una vista isométrica de alto nivel de los componentes del sistema:
 
-Este diagrama ha sido creado gracias a la herramienta **FossFLOW**, desarrollada por el equipo de [Stan Smith](https://github.com/stan-smith). Si te interesa crear diagramas isométricos de infraestructura de manera sencilla, te animo a probarla y apoyar el proyecto en su repositorio oficial: [FossFLOW en GitHub](https://github.com/stan-smith/FossFLOW).
+![Diagrama Isométrico FossFLOW](Resources/image.png)
 
-Si quieres ver el diagrama original y editarlo, puedes encontrar el archivo fuente en `Resources/Diagram.json`.
+> **Nota:** Este diagrama ha sido creado con **FossFLOW**, una herramienta desarrollada por el equipo de [Stan Smith](https://github.com/stan-smith). Si te interesa crear diagramas isométricos de infraestructura de manera sencilla, visita su repositorio oficial: [FossFLOW en GitHub](https://github.com/stan-smith/FossFLOW).
+
+El archivo fuente editable se encuentra en `Resources/Diagram.json`.
 
 ## Contribución
 
