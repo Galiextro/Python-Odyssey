@@ -140,6 +140,8 @@ flowchart LR
     style Ingesta fill:#d9d9d9,stroke:#333,stroke-width:2px,color:#000
     style Procesamiento fill:#bbdefb,stroke:#0277bd,stroke-width:2px,color:#000
     style Aplicacion fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px,color:#000
+    
+    linkStyle default stroke:#000,stroke-width:2px,fill:none,color:#000
 ```
 
 ### Representación Visual (FossFLOW)
