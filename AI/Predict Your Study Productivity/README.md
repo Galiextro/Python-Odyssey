@@ -110,7 +110,6 @@ El proyecto se compone de dos visualizaciones principales para entender su funci
 Este diagrama detalla el proceso técnico desde la recolección de datos hasta la visualización final:
 
 ```mermaid
-%%{init: {'theme': 'base', 'themeVariables': { 'background': '#ffffff', 'mainBkg': '#ffffff', 'primaryTextColor': '#000', 'lineColor': '#000'}}}%%
 flowchart LR
     subgraph Ingesta [Ingesta de Datos]
         A[Google Form / CSV]
@@ -138,11 +137,11 @@ flowchart LR
     A -->|Datos Crudos| B
     D -->|Carga| E
     
-    style Ingesta fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000
-    style Procesamiento fill:#e1f5fe,stroke:#0277bd,stroke-width:2px,color:#000
-    style Aplicacion fill:#e8f5e9,stroke:#2e7d32,stroke-width:2px,color:#000
+    style Ingesta fill:#d9d9d9,stroke:#333,stroke-width:2px,color:#000
+    style Procesamiento fill:#bbdefb,stroke:#0277bd,stroke-width:2px,color:#000
+    style Aplicacion fill:#c8e6c9,stroke:#2e7d32,stroke-width:2px,color:#000
     
-    linkStyle default stroke:#000,stroke-width:2px,fill:none,color:#000
+    linkStyle default stroke:#000,stroke-width:2px,fill:none,color:#fff
 ```
 
 ### Representación Visual (FossFLOW)
