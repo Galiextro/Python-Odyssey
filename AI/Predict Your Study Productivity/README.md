@@ -29,15 +29,21 @@ El sistema predice:
 ## Estructura del Repositorio
 
 ```text
-└── Resources                   # Recursos del proyecto
-    └── Diagram.json            # Diagrama del proyecto
-    └── image.png               # Imagen del proyecto
-├── productividad_estudio.csv   # Dataset con registros diarios
-├── notebook.ipynb              # Notebook para limpieza, EDA y entrenamiento
-├── modelo_regresion.pkl        # Modelo entrenado para predicción numérica
-├── modelo_clasificacion.pkl    # Modelo entrenado para clasificación categórica
-├── streamlit_app.py            # Aplicación web para visualización y predicción
-└── README.md                   # Documentación del proyecto
+├── app                             # Aplicación web
+    └── streamlit_app.py            # Aplicación web para visualización y predicción
+    └── requirements.txt            # Requisitos del proyecto
+├── data
+    └── productividad_estudio.csv   # Dataset con registros diarios
+├── models
+    └──modelo_regresion.pkl         # Modelo entrenado para predicción numérica
+    └──modelo_clasificacion.pkl     # Modelo entrenado para clasificación categórica
+├── notebooks
+    └── notebook.ipynb              # Notebook para limpieza, EDA y entrenamiento
+├── Resources                       # Recursos del proyecto
+    └── Diagram.json                # Diagrama del proyecto
+    └── image.png                   # Imagen del proyecto
+└── README.md                       # Documentación del proyecto
+└── run_app.bat                     # Script para ejecutar la aplicación
 ```
 
 ## Requisitos
