@@ -158,15 +158,6 @@ Una vista isométrica de alto nivel de los componentes del sistema:
 
 El archivo fuente editable se encuentra en `Resources/Diagram.json`.
 
-## Contribución
-
-Las contribuciones son bienvenidas. Si deseas mejorar los modelos o la interfaz:
-1.  Haz un Fork del repositorio.
-2.  Crea una rama para tu feature (`git checkout -b feature/NuevaFuncionalidad`).
-3.  Haz Commit de tus cambios (`git commit -m 'Añadir nueva funcionalidad'`).
-4.  Haz Push a la rama (`git push origin feature/NuevaFuncionalidad`).
-5.  Abre un Pull Request.
-
 ## Licencia
 
 Este proyecto se distribuye bajo la licencia MIT. Consulta el archivo `LICENSE` para más detalles.

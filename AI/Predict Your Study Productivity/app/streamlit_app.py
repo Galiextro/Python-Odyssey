@@ -1,11 +1,19 @@
 import streamlit as st
 import numpy as np
 import joblib
+import os
 
 st.title("Predicción de Productividad")
 
-model_reg = joblib.load("modelo_regresion.pkl")
-model_clf = joblib.load("modelo_clasificacion.pkl")
+# Obtener la ruta del directorio del script actual
+script_dir = os.path.dirname(os.path.abspath(__file__))
+
+# Construir rutas absolutas a los modelos
+model_reg_path = os.path.join(script_dir, "..", "models", "modelo_regresion.pkl")
+model_clf_path = os.path.join(script_dir, "..", "models", "modelo_clasificacion.pkl")
+
+model_reg = joblib.load(model_reg_path)
+model_clf = joblib.load(model_clf_path)
 
 st.subheader("Introduce tus datos:")
 
@@ -32,3 +40,8 @@ if st.button("Predecir"):
 
     st.success(f"Predicción numérica: {pred_reg:.2f}")
     st.info(f"Categoría estimada: {pred_clf.upper()}")
+
+if st.sidebar.button("Cerrar Aplicación"):
+    st.warning("Cerrando la aplicación...")
+    st.stop()
+    os._exit(0)
