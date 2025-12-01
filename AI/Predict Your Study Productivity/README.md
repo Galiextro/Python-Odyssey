@@ -30,14 +30,14 @@ El sistema predice:
 
 ```text
 ├── app                             # Aplicación web
-    └── streamlit_app.py            # Aplicación web para visualización y predicción
     └── requirements.txt            # Requisitos del proyecto
-├── data
+    └── streamlit_app.py            # Aplicación web para visualización y predicción
+├── data                            # Datos del proyecto
     └── productividad_estudio.csv   # Dataset con registros diarios
-├── models
-    └──modelo_regresion.pkl         # Modelo entrenado para predicción numérica
+├── models                          # Modelos entrenados
     └──modelo_clasificacion.pkl     # Modelo entrenado para clasificación categórica
-├── notebooks
+    └──modelo_regresion.pkl         # Modelo entrenado para predicción numérica
+├── notebooks                       # Notebooks del proyecto
     └── notebook.ipynb              # Notebook para limpieza, EDA y entrenamiento
 ├── Resources                       # Recursos del proyecto
     └── Diagram.json                # Diagrama del proyecto
