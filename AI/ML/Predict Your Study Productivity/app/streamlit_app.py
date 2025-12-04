@@ -5,10 +5,8 @@ import os
 
 st.title("Predicción de Productividad")
 
-# Obtener la ruta del directorio del script actual
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
-# Construir rutas absolutas a los modelos
 model_reg_path = os.path.join(script_dir, "..", "models", "modelo_regresion.pkl")
 model_clf_path = os.path.join(script_dir, "..", "models", "modelo_clasificacion.pkl")
 
@@ -38,10 +36,24 @@ if st.button("Predecir"):
     pred_reg = model_reg.predict(x)[0]
     pred_clf = model_clf.predict(x)[0]
 
+    if pred_clf == "ALTO":
+        st.success("¡Hoy es un buen día para estudiar con enfoque alto!")
+    elif pred_clf == "MEDIO":
+        st.info("Tu concentración será media. Considera pausas cortas.")
+    else:
+        st.warning("Tu productividad será baja. Tal vez prioriza descanso o tareas ligeras.")
+
     st.success(f"Predicción numérica: {pred_reg:.2f}")
     st.info(f"Categoría estimada: {pred_clf.upper()}")
 
+    horas = np.arange(6, 24)
+    predicciones = []
+    for h in horas:
+        x_test = np.array([[h, tiempo_estudio, distraccion, energia, dificultad, uso_movil, ruido, 1 if descanso=="sí" else 0, estado]])
+        predicciones.append(model_reg.predict(x_test)[0])
+
+    st.line_chart({"Hora": horas, "Productividad": predicciones})
+
 if st.sidebar.button("Cerrar Aplicación"):
-    st.warning("Cerrando la aplicación...")
+    st.warning("Se detendrá la ejecución de esta sesión")
     st.stop()
-    os._exit(0)
