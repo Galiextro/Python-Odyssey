@@ -28,20 +28,6 @@ $$
 > **Regla de Decisión**
 > * Si la probabilidad es $\ge 0.5$ $\rightarrow$ Clasifica como **1**.
 > * Si la probabilidad es $< 0.5$ $\rightarrow$ Clasifica como **0**.
-
-### Funcionamiento del modelo
-
-```mermaid
-flowchart TD
-
-    A[Entradas<br/>(X1, X2, ..., Xn)]
-    B[Combinación lineal<br/>z = w0 + w1·X1 + ... + wn·Xn]
-    C[Función sigmoide<br/>σ(z) → probabilidad]
-    D[Comparación con umbral<br/>p ≥ 0.5 → Clase 1<br/>p < 0.5 → Clase 0]
-
-    A --> B --> C --> D
-```
-
 ---
 
 ## 2. Cuándo usar regresión logística
@@ -62,7 +48,7 @@ flowchart TD
 
 ### ¿Cuándo elegir Regresión Logística frente a otros?
 Aunque existen modelos más complejos (Random Forest, XGBoost), la Regresión Logística es ideal en estos escenarios:
-* **Necesidad de Explicabilidad:** Es "Caja Blanca". Puedes ver los coeficientes ($coef\_$) y saber exactamente qué variable influye positiva o negativamente en el resultado.
+* **Necesidad de Explicabilidad:** Es "Caja Blanca". Puedes ver los coeficientes y saber exactamente qué variable influye positiva o negativamente en el resultado.
 * **Modelo Base (Baseline):** Siempre debería ser el primer modelo que ejecutas para tener una referencia de rendimiento.
 * **Pocos Datos:** Funciona bien en datasets pequeños donde modelos complejos harían overfitting.
 * **Baja Latencia:** Es matemáticamente muy simple, por lo que las predicciones son extremadamente rápidas en producción.
